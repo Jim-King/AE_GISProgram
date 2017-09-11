@@ -1,0 +1,16 @@
+E:\2014302590127wjm\MyGIS\MyGIS\bin\Debug\MyGIS.exe
+E:\2014302590127wjm\MyGIS\MyGIS\bin\Debug\MyGIS.pdb
+E:\2014302590127wjm\MyGIS\MyGIS\bin\Debug\MyCalculator.exe
+E:\2014302590127wjm\MyGIS\MyGIS\bin\Debug\MyCalculator.pdb
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.csprojResolveAssemblyReference.cache
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.Form1.resources
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.Properties.Resources.resources
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.csproj.GenerateResource.Cache
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.exe
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.pdb
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.Scene_Point_Query.resources
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.MapEditForm.resources
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.Buffer.resources
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.Spatial_Query.resources
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.attriQueryFormcs.resources
+E:\2014302590127wjm\MyGIS\MyGIS\obj\x86\Debug\MyGIS.RoadNet_System.resources
