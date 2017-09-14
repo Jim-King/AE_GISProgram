@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.HulkEye_axMap = new ESRI.ArcGIS.Controls.AxMapControl();
+            this.axTOCControl2 = new ESRI.ArcGIS.Controls.AxTOCControl();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.mainView_axMap = new ESRI.ArcGIS.Controls.AxMapControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.axToolbarControl2 = new ESRI.ArcGIS.Controls.AxToolbarControl();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -47,11 +51,11 @@
             this.spatialQueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spatialAnalysisToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bufferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spatialJoinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.axTOCControl1 = new ESRI.ArcGIS.Controls.AxTOCControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.Point_Query = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -68,49 +72,46 @@
             this.OpenRasterFile = new System.Windows.Forms.Button();
             this.OpenSxdFile = new System.Windows.Forms.Button();
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
+            this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
+            this.axSceneControl1 = new ESRI.ArcGIS.Controls.AxSceneControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roadNetSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.HulkEye_axMap = new ESRI.ArcGIS.Controls.AxMapControl();
-            this.axTOCControl2 = new ESRI.ArcGIS.Controls.AxTOCControl();
-            this.mainView_axMap = new ESRI.ArcGIS.Controls.AxMapControl();
-            this.axToolbarControl2 = new ESRI.ArcGIS.Controls.AxToolbarControl();
-            this.axTOCControl1 = new ESRI.ArcGIS.Controls.AxTOCControl();
-            this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
-            this.axSceneControl1 = new ESRI.ArcGIS.Controls.AxSceneControl();
+            this.spatialJoinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HulkEye_axMap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainView_axMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl2)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HulkEye_axMap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainView_axMap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -157,6 +158,24 @@
             this.splitContainer1.SplitterDistance = 160;
             this.splitContainer1.TabIndex = 3;
             // 
+            // HulkEye_axMap
+            // 
+            this.HulkEye_axMap.Location = new System.Drawing.Point(3, 254);
+            this.HulkEye_axMap.Name = "HulkEye_axMap";
+            this.HulkEye_axMap.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("HulkEye_axMap.OcxState")));
+            this.HulkEye_axMap.Size = new System.Drawing.Size(153, 154);
+            this.HulkEye_axMap.TabIndex = 1;
+            this.HulkEye_axMap.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.HulkEye_axMap_OnMouseDown);
+            this.HulkEye_axMap.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.HulkEye_axMap_OnMouseMove);
+            // 
+            // axTOCControl2
+            // 
+            this.axTOCControl2.Location = new System.Drawing.Point(3, 0);
+            this.axTOCControl2.Name = "axTOCControl2";
+            this.axTOCControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl2.OcxState")));
+            this.axTOCControl2.Size = new System.Drawing.Size(153, 248);
+            this.axTOCControl2.TabIndex = 0;
+            // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -192,6 +211,18 @@
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
+            // mainView_axMap
+            // 
+            this.mainView_axMap.Location = new System.Drawing.Point(3, 0);
+            this.mainView_axMap.Name = "mainView_axMap";
+            this.mainView_axMap.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mainView_axMap.OcxState")));
+            this.mainView_axMap.Size = new System.Drawing.Size(373, 299);
+            this.mainView_axMap.TabIndex = 0;
+            this.mainView_axMap.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.mainView_axMap_OnMouseDown);
+            this.mainView_axMap.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.mainView_axMap_OnMouseMove);
+            this.mainView_axMap.OnExtentUpdated += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnExtentUpdatedEventHandler(this.mainView_axMap_OnExtentUpdated);
+            this.mainView_axMap.OnMapReplaced += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMapReplacedEventHandler(this.mainView_axMap_OnMapReplaced);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -201,6 +232,15 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(573, 107);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // axToolbarControl2
+            // 
+            this.axToolbarControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.axToolbarControl2.Location = new System.Drawing.Point(3, 28);
+            this.axToolbarControl2.Name = "axToolbarControl2";
+            this.axToolbarControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl2.OcxState")));
+            this.axToolbarControl2.Size = new System.Drawing.Size(737, 28);
+            this.axToolbarControl2.TabIndex = 2;
             // 
             // statusStrip1
             // 
@@ -263,8 +303,7 @@
             // spatialAnalysisToolStripMenuItem1
             // 
             this.spatialAnalysisToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bufferToolStripMenuItem,
-            this.spatialJoinToolStripMenuItem});
+            this.bufferToolStripMenuItem});
             this.spatialAnalysisToolStripMenuItem1.Name = "spatialAnalysisToolStripMenuItem1";
             this.spatialAnalysisToolStripMenuItem1.Size = new System.Drawing.Size(109, 21);
             this.spatialAnalysisToolStripMenuItem1.Text = "Spatial Analysis";
@@ -272,15 +311,9 @@
             // bufferToolStripMenuItem
             // 
             this.bufferToolStripMenuItem.Name = "bufferToolStripMenuItem";
-            this.bufferToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.bufferToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.bufferToolStripMenuItem.Text = "Buffer";
             this.bufferToolStripMenuItem.Click += new System.EventHandler(this.bufferToolStripMenuItem_Click);
-            // 
-            // spatialJoinToolStripMenuItem
-            // 
-            this.spatialJoinToolStripMenuItem.Name = "spatialJoinToolStripMenuItem";
-            this.spatialJoinToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.spatialJoinToolStripMenuItem.Text = "Spatial Join";
             // 
             // mapEditToolStripMenuItem
             // 
@@ -323,6 +356,15 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Layer";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // axTOCControl1
+            // 
+            this.axTOCControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axTOCControl1.Location = new System.Drawing.Point(3, 3);
+            this.axTOCControl1.Name = "axTOCControl1";
+            this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
+            this.axTOCControl1.Size = new System.Drawing.Size(167, 408);
+            this.axTOCControl1.TabIndex = 0;
             // 
             // tabPage5
             // 
@@ -491,6 +533,23 @@
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
             this.axLicenseControl1.TabIndex = 3;
             // 
+            // axToolbarControl1
+            // 
+            this.axToolbarControl1.Location = new System.Drawing.Point(45, 1);
+            this.axToolbarControl1.Name = "axToolbarControl1";
+            this.axToolbarControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl1.OcxState")));
+            this.axToolbarControl1.Size = new System.Drawing.Size(658, 28);
+            this.axToolbarControl1.TabIndex = 1;
+            // 
+            // axSceneControl1
+            // 
+            this.axSceneControl1.Location = new System.Drawing.Point(45, 36);
+            this.axSceneControl1.Name = "axSceneControl1";
+            this.axSceneControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axSceneControl1.OcxState")));
+            this.axSceneControl1.Size = new System.Drawing.Size(467, 435);
+            this.axSceneControl1.TabIndex = 0;
+            this.axSceneControl1.OnMouseDown += new ESRI.ArcGIS.Controls.ISceneControlEvents_Ax_OnMouseDownEventHandler(this.axSceneControl1_OnMouseDown);
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.pictureBox1);
@@ -517,7 +576,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.calculatorToolStripMenuItem,
-            this.roadNetSystemToolStripMenuItem});
+            this.roadNetSystemToolStripMenuItem,
+            this.spatialJoinToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(737, 25);
@@ -538,70 +598,17 @@
             this.roadNetSystemToolStripMenuItem.Text = "RoadNet System";
             this.roadNetSystemToolStripMenuItem.Click += new System.EventHandler(this.roadNetSystemToolStripMenuItem_Click);
             // 
-            // HulkEye_axMap
+            // spatialJoinToolStripMenuItem
             // 
-            this.HulkEye_axMap.Location = new System.Drawing.Point(3, 254);
-            this.HulkEye_axMap.Name = "HulkEye_axMap";
-            this.HulkEye_axMap.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("HulkEye_axMap.OcxState")));
-            this.HulkEye_axMap.Size = new System.Drawing.Size(153, 154);
-            this.HulkEye_axMap.TabIndex = 1;
-            this.HulkEye_axMap.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.HulkEye_axMap_OnMouseDown);
-            this.HulkEye_axMap.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.HulkEye_axMap_OnMouseMove);
+            this.spatialJoinToolStripMenuItem.Name = "spatialJoinToolStripMenuItem";
+            this.spatialJoinToolStripMenuItem.Size = new System.Drawing.Size(86, 21);
+            this.spatialJoinToolStripMenuItem.Text = "Spatial Join";
+            this.spatialJoinToolStripMenuItem.Click += new System.EventHandler(this.spatialJoinToolStripMenuItem_Click);
             // 
-            // axTOCControl2
+            // skinEngine1
             // 
-            this.axTOCControl2.Location = new System.Drawing.Point(3, 0);
-            this.axTOCControl2.Name = "axTOCControl2";
-            this.axTOCControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl2.OcxState")));
-            this.axTOCControl2.Size = new System.Drawing.Size(153, 248);
-            this.axTOCControl2.TabIndex = 0;
-            // 
-            // mainView_axMap
-            // 
-            this.mainView_axMap.Location = new System.Drawing.Point(3, 0);
-            this.mainView_axMap.Name = "mainView_axMap";
-            this.mainView_axMap.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mainView_axMap.OcxState")));
-            this.mainView_axMap.Size = new System.Drawing.Size(373, 299);
-            this.mainView_axMap.TabIndex = 0;
-            this.mainView_axMap.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.mainView_axMap_OnMouseDown);
-            this.mainView_axMap.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.mainView_axMap_OnMouseMove);
-            this.mainView_axMap.OnExtentUpdated += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnExtentUpdatedEventHandler(this.mainView_axMap_OnExtentUpdated);
-            this.mainView_axMap.OnMapReplaced += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMapReplacedEventHandler(this.mainView_axMap_OnMapReplaced);
-            // 
-            // axToolbarControl2
-            // 
-            this.axToolbarControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.axToolbarControl2.Location = new System.Drawing.Point(3, 28);
-            this.axToolbarControl2.Name = "axToolbarControl2";
-            this.axToolbarControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl2.OcxState")));
-            this.axToolbarControl2.Size = new System.Drawing.Size(737, 28);
-            this.axToolbarControl2.TabIndex = 2;
-            // 
-            // axTOCControl1
-            // 
-            this.axTOCControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axTOCControl1.Location = new System.Drawing.Point(3, 3);
-            this.axTOCControl1.Name = "axTOCControl1";
-            this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
-            this.axTOCControl1.Size = new System.Drawing.Size(167, 408);
-            this.axTOCControl1.TabIndex = 0;
-            // 
-            // axToolbarControl1
-            // 
-            this.axToolbarControl1.Location = new System.Drawing.Point(45, 1);
-            this.axToolbarControl1.Name = "axToolbarControl1";
-            this.axToolbarControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl1.OcxState")));
-            this.axToolbarControl1.Size = new System.Drawing.Size(658, 28);
-            this.axToolbarControl1.TabIndex = 1;
-            // 
-            // axSceneControl1
-            // 
-            this.axSceneControl1.Location = new System.Drawing.Point(45, 36);
-            this.axSceneControl1.Name = "axSceneControl1";
-            this.axSceneControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axSceneControl1.OcxState")));
-            this.axSceneControl1.Size = new System.Drawing.Size(467, 435);
-            this.axSceneControl1.TabIndex = 0;
-            this.axSceneControl1.OnMouseDown += new ESRI.ArcGIS.Controls.ISceneControlEvents_Ax_OnMouseDownEventHandler(this.axSceneControl1_OnMouseDown);
+            this.skinEngine1.SerialNumber = "";
+            this.skinEngine1.SkinFile = null;
             // 
             // Form1
             // 
@@ -613,6 +620,7 @@
             this.Name = "Form1";
             this.Text = "BasicGIS";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -620,12 +628,16 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.HulkEye_axMap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl2)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainView_axMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl2)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
@@ -633,24 +645,20 @@
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HulkEye_axMap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainView_axMap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -698,12 +706,13 @@
         private System.Windows.Forms.ToolStripMenuItem attributeQueryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spatialQueryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bufferToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem spatialJoinToolStripMenuItem;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripMenuItem roadNetSystemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spatialJoinToolStripMenuItem;
+        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }
 

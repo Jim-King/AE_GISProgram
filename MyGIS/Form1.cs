@@ -28,6 +28,7 @@ namespace MyGIS
         Spatial_Query spatialQueryForm;
         attriQueryFormcs attributeQForm;
         RoadNet_System networkForm;
+        SpatialJoinForm newSJForm;
         //空间查询的查询方式
         private int mQueryMode;
         //图层索引
@@ -568,6 +569,17 @@ namespace MyGIS
         {
             networkForm = new RoadNet_System();
             networkForm.Show();
+        }
+
+        private void spatialJoinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newSJForm = new SpatialJoinForm();
+            newSJForm.Show();
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            skinEngine1.SkinFile = @"..\..\IrisSkin2sskpages\skin\皮肤\MSN\MSN.ssk";
         }
 
     }

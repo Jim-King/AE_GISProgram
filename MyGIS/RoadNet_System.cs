@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.DataSourcesGDB;
 using ESRI.ArcGIS.Carto;
+using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.NetworkAnalysis;
 using ESRI.ArcGIS.Display;
@@ -27,6 +29,7 @@ namespace MyGIS
         public IFeatureLayer cityFeatureLayer;
         public IFeatureLayer roadFeatureLayer;
         public IFeature pFeature;
+        private DataTable dt=new DataTable();
         private int if_pick_up;
 
         //返回结果变量
@@ -150,7 +153,7 @@ namespace MyGIS
             if_pick_up=0;
             //获取几何网络文件路径
             //注意修改此路径为当前存储路径
-            string strPath = @"E:\2017-9GIS综合实习\2017-9GIS综合实习\例子数据\Network\USA_Highway_Network_GDB.mdb";
+            string strPath = @"..\..\Network\USA_Highway_Network_GDB.mdb";
             //打开工作空间
             IWorkspaceFactory pWorkspaceFactory = new AccessWorkspaceFactory();
             IFeatureWorkspace pFeatureWorkspace = pWorkspaceFactory.OpenFromFile(strPath, 0) as IFeatureWorkspace;
@@ -188,6 +191,8 @@ namespace MyGIS
             }
             cityFeatureLayer=new FeatureLayerClass();
             cityFeatureLayer.FeatureClass = pFeatClsContainer.get_Class(1);
+            roadFeatureLayer = new FeatureLayerClass();
+            roadFeatureLayer.FeatureClass = pFeatClsContainer.get_Class(0);
             //计算snap tolerance为图层最大宽度的1/100
             //获取图层数量
             int intLayerCount = this.axMapControl1.LayerCount;
@@ -256,6 +261,9 @@ namespace MyGIS
                 axMapControl1.Map.SelectFeature(this.axMapControl1.Map.get_Layer(0), pFeature);
                 axMapControl1.ActiveView.Extent = pFeature.Shape.Envelope;
                 axMapControl1.ActiveView.Refresh();
+                LoadQueryResult(cityFeatureLayer, pFeature);
+                this.dataGridView1.DataSource =dt.DefaultView;            
+                dataGridView1.Refresh();
             }
             else
             {
@@ -269,6 +277,7 @@ namespace MyGIS
             string cityname=txtCityName.Text.ToString();
             //定义图层，要素游标，查询过滤器，要素
             SearchbyName(cityname);       
+
         }
 
         private void btnRoute_Click(object sender, EventArgs e)
@@ -280,6 +289,7 @@ namespace MyGIS
                 SolvePath("LENGTH");
                 //路径转换为几何要素
                 IPolyline pPolyLineResult = PathToPolyLine();
+                dataGridView1.DataSource = LoadRoadResult(roadFeatureLayer, pPolyLineResult).DefaultView;        
                 //获取屏幕显示
                 IActiveView pActiveView = this.axMapControl1.ActiveView;
                 IScreenDisplay pScreenDisplay = pActiveView.ScreenDisplay;
@@ -310,6 +320,105 @@ namespace MyGIS
         private void btnPickup_Click(object sender, EventArgs e)
         {
             if_pick_up=1;
+        }
+
+        private void LoadQueryResult(IFeatureLayer featureLayer, IFeature pFeature)
+        {
+            IFeatureClass pFeatureClass = featureLayer.FeatureClass;
+
+            //根据图层属性字段初始化DataTable
+            IFields pFields = pFeatureClass.Fields;
+            if (this.dt.Rows.Count== 0)
+            {
+                for (int i = 0; i < pFields.FieldCount; i++)
+                {
+                    string strFldName;
+                    strFldName = pFields.get_Field(i).AliasName;
+                    dt.Columns.Add(strFldName);
+                }
+            }
+            
+                string strFldValue = null;
+                DataRow dr = dt.NewRow();
+                //遍历图层属性表字段值，并加入pDataTable
+                for (int i = 0; i < pFields.FieldCount; i++)
+                {
+                    string strFldName = pFields.get_Field(i).Name;
+                    if (strFldName == "Shape")
+                    {
+                        strFldValue = Convert.ToString(pFeature.Shape.GeometryType);
+                    }
+                    else
+                        strFldValue = Convert.ToString(pFeature.get_Value(i));
+                    dr[i] = strFldValue;
+                }
+                dt.Rows.Add(dr);
+                //高亮选择要素 
+        }
+
+        private DataTable LoadRoadResult(IFeatureLayer featureLayer, IGeometry geometry)
+        {
+            IFeatureClass pFeatureClass = featureLayer.FeatureClass;
+
+            //根据图层属性字段初始化DataTable
+            IFields pFields = pFeatureClass.Fields;
+            DataTable pDataTable = new DataTable();
+            for (int i = 0; i < pFields.FieldCount; i++)
+            {
+                string strFldName;
+                strFldName = pFields.get_Field(i).AliasName;
+                pDataTable.Columns.Add(strFldName);
+            }
+
+            //空间过滤器
+            ISpatialFilter pSpatialFilter = new SpatialFilterClass();
+            pSpatialFilter.Geometry = geometry;
+
+            //根据图层类型选择缓冲方式
+            switch (pFeatureClass.ShapeType)
+            {
+                case esriGeometryType.esriGeometryPoint:
+                    pSpatialFilter.SpatialRel = esriSpatialRelEnum.esriSpatialRelContains;
+                    break;
+                case esriGeometryType.esriGeometryPolyline:
+                    pSpatialFilter.SpatialRel = esriSpatialRelEnum.esriSpatialRelOverlaps;
+                    break;
+                case esriGeometryType.esriGeometryPolygon:
+                    pSpatialFilter.SpatialRel = esriSpatialRelEnum.esriSpatialRelIntersects;
+                    break;
+            }
+            //定义空间过滤器的空间字段
+            pSpatialFilter.GeometryField = pFeatureClass.ShapeFieldName;
+
+            IQueryFilter pQueryFilter;
+            IFeatureCursor pFeatureCursor;
+            IFeature pFeature;
+            //利用要素过滤器查询要素
+            pQueryFilter = pSpatialFilter as IQueryFilter;
+            pFeatureCursor = featureLayer.Search(pQueryFilter, true);
+            pFeature = pFeatureCursor.NextFeature();
+
+            while (pFeature != null)
+            {
+                string strFldValue = null;
+                DataRow dr = pDataTable.NewRow();
+                //遍历图层属性表字段值，并加入pDataTable
+                for (int i = 0; i < pFields.FieldCount; i++)
+                {
+                    string strFldName = pFields.get_Field(i).Name;
+                    if (strFldName == "Shape")
+                    {
+                        strFldValue = Convert.ToString(pFeature.Shape.GeometryType);
+                    }
+                    else
+                        strFldValue = Convert.ToString(pFeature.get_Value(i));
+                    dr[i] = strFldValue;
+                }
+                pDataTable.Rows.Add(dr);
+                //高亮选择要素
+                pFeature = pFeatureCursor.NextFeature();
+            }
+            return pDataTable;
         }
 
     }

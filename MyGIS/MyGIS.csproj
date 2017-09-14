@@ -11,7 +11,8 @@
     <RootNamespace>MyGIS</RootNamespace>
     <AssemblyName>MyGIS</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -64,7 +65,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.GlobeCore, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
@@ -83,11 +84,13 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Version, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -144,6 +147,12 @@
     <Compile Include="Spatial Query.Designer.cs">
       <DependentUpon>Spatial Query.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpatialJoinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpatialJoinForm.Designer.cs">
+      <DependentUpon>SpatialJoinForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="attriQueryFormcs.resx">
       <DependentUpon>attriQueryFormcs.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RoadNet_System.resx">
       <DependentUpon>RoadNet_System.cs</DependentUpon>
@@ -174,6 +184,10 @@
     <EmbeddedResource Include="Spatial Query.resx">
       <DependentUpon>Spatial Query.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpatialJoinForm.resx">
+      <DependentUpon>SpatialJoinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -185,7 +199,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MyCalculator\MyCalculator\MyCalculator.csproj">
+    <ProjectReference Include="..\..\..\MyCalculator\MyCalculator\MyCalculator.csproj">
       <Project>{1215C257-D109-4425-9912-9B6B3206F654}</Project>
       <Name>MyCalculator</Name>
     </ProjectReference>
